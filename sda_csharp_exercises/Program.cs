@@ -6,6 +6,18 @@ namespace sda_csharp_exercises
     {
         static void Main(string[] args)
         {
+            Console.Write("Podaj podstawę: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Podaj wykładnik: ");
+            int y = Convert.ToInt32(Console.ReadLine());
+            if (y > 0)
+            {
+                Console.WriteLine($"{x} do potęgi {y} = {Math.Pow(x, y)}");
+            }
+            else
+            {
+                Console.WriteLine("Podaj dodatki wykładnik!");
+            }
         }
     }
 }

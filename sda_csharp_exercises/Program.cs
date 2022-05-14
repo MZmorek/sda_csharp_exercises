@@ -6,7 +6,16 @@ namespace sda_csharp_exercises
     {
         static void Main(string[] args)
         {
-            DrawTriangle();
+            try
+            {
+                DrawTriangle();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Niewłaściwa wartość.");
+                Console.WriteLine(ex.Message);
+            }
+            
         }
         static void DrawTriangle()
         {

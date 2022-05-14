@@ -10,10 +10,9 @@ namespace sda_csharp_exercises
             {
                 DrawTriangle();
             }
-            catch (Exception ex)
+            catch
             {
                 Console.WriteLine("Niewłaściwa wartość.");
-                Console.WriteLine(ex.Message);
             }
             
         }
@@ -25,15 +24,16 @@ namespace sda_csharp_exercises
 
             for (int i = 0; i < numberOfLines; i++)
             {
-                for (int j = 0; j < i; j++)
-                {
-                    Console.Write(sign);
-                }
-                Console.WriteLine();
+                PrintLine(i, sign);
             }
             for (int i = numberOfLines; i > 0; i--)
             {
-                for (int j = i; j > 0; j--)
+                PrintLine(i, sign);
+            }
+
+            static void PrintLine(int numberOfLines, char sign)
+            {
+                for (int i = 1; i <= numberOfLines; i++)
                 {
                     Console.Write(sign);
                 }

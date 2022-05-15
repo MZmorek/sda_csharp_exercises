@@ -26,6 +26,13 @@ namespace sda_csharp_exercises
         public int YearOfBirth { get; set; }
         public bool IsAdult => (DateTime.Now.Year) - YearOfBirth >= PROPER_AGE;
 
+        public Person(string FirstName, string LastName, int YearOfBirth)
+        {
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.YearOfBirth = YearOfBirth;
+        }
+
         public void WhoAmI()
         {
             Console.WriteLine($"My name is {firstName} {LastName}");

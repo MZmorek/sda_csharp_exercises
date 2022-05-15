@@ -15,27 +15,19 @@ namespace sda_csharp_exercises
             pets[1] = szatan;
             pets[2] = rysio;
 
-
+            PrintInfo(pets);
         }
         public static void PrintInfo(IPet[] pets)
         {
             foreach (IPet pet in pets)
             {
-                Console.WriteLine($"{name} robi {pet.MakeSound()}");
-            }
-        }
-
-        public static void PetType(IPet[] pets)
-        {
-            foreach (IPet pet in pets)
-            {
-                if (pet is Dog)
+                if (pet is Dog dog)
                 {
-                    Console.Write("jest psem");
+                    Console.WriteLine($"{dog.name} jest psem i robi {pet.MakeSound()}");
                 }
-                else if (pet is Cat)
+                else if (pet is Cat cat)
                 {
-                Console.Write("jest kotem");
+                    Console.WriteLine($"{cat.name} jest kotem i robi {pet.MakeSound()}");
                 }
             }
         }

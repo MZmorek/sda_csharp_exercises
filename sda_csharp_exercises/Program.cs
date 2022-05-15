@@ -6,25 +6,21 @@ namespace sda_csharp_exercises
     {
         static void Main(string[] args)
         {
-            //Person person = new Person();
-            //Person person = new();
-            //var person = new Person();
-            //person.FirstName = "Jan";
-            //person.LastName = "Kowalski";
-            //person.YearOfBirth = 1988;
+            Person[] guests = new Person[]
+            {
+                new Person("Jan", "Kowalski", 1988),
+                new Employee("Adam", "Nowak", 2000, 5_000.00M)
+            };
 
-            //person.WhoAmI();
-            //Console.WriteLine($"Is Adult: {person.IsAdult()}");
-            //Console.WriteLine($"Is Adult: {person.IsAdult}");
+            foreach (Person guest in guests)
+            {
+                guest.WhoAmI();
 
-            //Employee employee = new();
-            //employee.FirstName = "Joanna";
-            //employee.LastName = "Nowak";
-            //employee.YearOfBirth = 2000;
-            //employee.Salary = 5_000.00M;
-
-            //Person anotherPerson = employee;
-
+                if (guest is Employee employee)
+                {
+                    Console.Write($" - salary: {employee.Salary}");
+                }
+            }
         }
     }
 }

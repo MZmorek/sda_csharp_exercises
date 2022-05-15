@@ -6,35 +6,15 @@ namespace sda_csharp_exercises
     {
         static void Main(string[] args)
         {
-            Person[] guests = new Person[]
+            Employee[] employees = new Employee[]
             {
-                new Person("Jan", "Kowalski", 1988),
-                new Employee("Adam", "Nowak", 2000, 5_000.00M)
+                new Employee("Jan", "Kowalski", 1990, 5_000.00M),
+                new Manager("Adam", "Nowak", 2000, 5_000.00M),
             };
 
-            foreach (Person guest in guests)
+            foreach (var employee in employees)
             {
-                guest.WhoAmI();
-
-                if (guest is Employee employee)
-                {
-                    Console.WriteLine($" - salary: {employee.Salary}");
-                }
-            }
-            PrintHello(guests);
-        }
-        static void PrintHello(Person[] guests)
-        {
-            foreach (var guest in guests)
-            {
-                if (guest.IsAdult)
-                {
-                    Console.WriteLine("Welcome to adult zone");
-                }
-                else
-                {
-                    Console.WriteLine("Welcome to the playground");
-                }
+                employee.WhoAmI();
             }
         }
     }

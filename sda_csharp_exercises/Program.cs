@@ -18,7 +18,22 @@ namespace sda_csharp_exercises
 
                 if (guest is Employee employee)
                 {
-                    Console.Write($" - salary: {employee.Salary}");
+                    Console.WriteLine($" - salary: {employee.Salary}");
+                }
+            }
+            PrintHello(guests);
+        }
+        static void PrintHello(Person[] guests)
+        {
+            foreach (var guest in guests)
+            {
+                if (guest.IsAdult)
+                {
+                    Console.WriteLine("Welcome to adult zone");
+                }
+                else
+                {
+                    Console.WriteLine("Welcome to the playground");
                 }
             }
         }

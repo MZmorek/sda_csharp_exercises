@@ -2,14 +2,14 @@
 
 namespace sda_csharp_exercises
 {
-    class Circle : IShape
+    class Circle : Shape
     {
         private double radius { get; set; }
         public Circle(double radius)
         {
             this.radius = radius;
         }
-        public double GetArea()
+        public override double GetArea()
         {
             return radius * radius * Math.PI;
         }

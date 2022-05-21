@@ -1,13 +1,13 @@
 ﻿namespace sda_csharp_exercises
 {
-    class Square : IShape
+    class Square : Shape
     {
         double side { get; set; }
         public Square(double side)
         {
             this.side = side;
         }
-        public double GetArea()
+        public override double GetArea()
         {
             return side * side;
         }
